@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isWalking;
     private bool walkingLeft;
+    private bool walkingUp;
 
     public GameObject hitbox;
 
@@ -80,6 +81,9 @@ public class PlayerController : MonoBehaviour
             bool hasVerticalInput = !Mathf.Approximately(moveDirection.y, 0f);
             bool isWalking = hasHorizontalInput || hasVerticalInput;
             m_Animator.SetBool("IsWalking", isWalking);
+        } else if (isAttacking)
+        {
+            rb.velocity = new Vector2(0f, 0f);
         }
         
     }
