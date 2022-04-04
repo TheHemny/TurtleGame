@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource walkSound;
     public string attackKey;
+    public string blockKey;
 
     private bool isAttacking;
 
@@ -66,6 +67,11 @@ public class PlayerController : MonoBehaviour
             isAttacking = true;
             StopCoroutine(Attack("turtle"));
             StartCoroutine(Attack("turtle"));
+        }
+
+        if (Input.GetKeyDown(blockKey))
+        {
+
         }
 
         
