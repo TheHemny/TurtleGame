@@ -6,6 +6,9 @@ TagManager:
   tags:
   - HealthRestore
   - Player_Hitbox
+  - Player_Hurtbox
+  - Enemy_Hurtbox
+  - DamageSource
   layers:
   - Default
   - TransparentFX

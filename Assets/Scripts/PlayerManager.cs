@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    //The one in use
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
@@ -62,12 +63,6 @@ public class PlayerManager : MonoBehaviour
                         hurtboxes[1].SetActive(true);
                         previousActiveHurtbox = hurtboxes[1];
                         break;
-                    /*
-                case 0:
-                    animator.SetBool("FacingLeft", false);
-                    animator.SetBool("FacingRight", false);
-                    break;
-                    */
                     case 1:
                         animator.SetBool("FacingLeft", false);
                         animator.SetBool("FacingRight", true);

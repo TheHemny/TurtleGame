@@ -6,20 +6,24 @@ public class Health : MonoBehaviour
 {
     //Health works in multiples of 4
     //1 heart = 4 HP
-    public int maxHealth = 12;
+    public int maxHealth;
     public int currentHealth;
+    public Animator m_animator;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;    
+        currentHealth = maxHealth;
+        m_animator = this.gameObject.GetComponent<Animator>();
+        m_animator.SetInteger("Health", currentHealth);
     }
 
     public void TakeDamage(int amount)
     {
 
         currentHealth -= amount;
+        m_animator.SetInteger("Health", currentHealth);
         Debug.Log("Current health: " + currentHealth);
         if(currentHealth <= 0)
         {
@@ -30,7 +34,8 @@ public class Health : MonoBehaviour
     public void Heal(int amount)
     {
         currentHealth += amount;
-        if(currentHealth > maxHealth)
+        m_animator.SetInteger("Health", currentHealth);
+        if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
@@ -39,5 +44,10 @@ public class Health : MonoBehaviour
     public void AddMaxHealth()
     {
         maxHealth += 4;
+    }
+
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
     }
 }
