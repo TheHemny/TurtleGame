@@ -1430,7 +1430,7 @@ PrefabInstance:
       objectReference: {fileID: 698983025}
     - target: {fileID: 8077520211940749723, guid: 72ebe6311bed9374cb2c69f9c6cb6f67, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8077520211940749723, guid: 72ebe6311bed9374cb2c69f9c6cb6f67, type: 3}
       propertyPath: m_animator
