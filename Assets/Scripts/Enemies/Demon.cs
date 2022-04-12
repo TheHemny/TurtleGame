@@ -286,7 +286,7 @@ public class Demon : MonoBehaviour
 
         attackChance = (int)Random.Range(0, 2);
         //Debug.Log("attackChance = " + attackChance);
-        attackChance = 0;
+        //attackChance = 0;
         if (readyToAttack)
         {
             switch (attackChance)
