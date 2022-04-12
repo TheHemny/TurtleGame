@@ -9,6 +9,10 @@ TagManager:
   - Player_Hurtbox
   - Enemy_Hurtbox
   - DamageSource
+  - Pitchfork_Up
+  - Pitchfork_Down
+  - Pitchfork_Left
+  - Pitchfork_Right
   layers:
   - Default
   - TransparentFX

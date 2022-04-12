@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public Animator m_animator;
-
+    public AudioSource damageSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,11 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-
+        if(this.gameObject.tag == "Player" && damageSFX != null)
+        {
+            damageSFX.Play();
+            Debug.Log("Ouch!");
+        }
         currentHealth -= amount;
         m_animator.SetInteger("Health", currentHealth);
         Debug.Log("Current health: " + currentHealth);

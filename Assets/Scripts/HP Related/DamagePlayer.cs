@@ -13,6 +13,10 @@ public class DamagePlayer : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Hey!");
+        playerObject = GameObject.Find("Player");
+        player = playerObject.GetComponent<PlayerManager>();
+        m_animator = playerObject.GetComponent<Animator>();
         playerInvincible = false;
     }
 
@@ -34,7 +38,23 @@ public class DamagePlayer : MonoBehaviour
         
     }//end OnTriggerEnter2D
 
+    public void DealDamage(int dmg)
+    {
+        //I love jank so much
+        if (!player.GetIsBlocking() && !playerInvincible)
+        {
+            var healthComponent = playerObject.GetComponent<Health>();
+            if (healthComponent != null && healthComponent.GetCurrentHealth() != 0)
+            {
+                Debug.Log("Dealing " + dmg + " damage");
+                healthComponent.TakeDamage(dmg);
+                InvincibleManager();
+            }
 
+
+
+        }
+    }
     private void InvincibleManager()
     {
         playerInvincible = true;
