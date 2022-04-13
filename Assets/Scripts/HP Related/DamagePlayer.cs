@@ -13,7 +13,6 @@ public class DamagePlayer : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Hey!");
         playerObject = GameObject.Find("Player");
         player = playerObject.GetComponent<PlayerManager>();
         m_animator = playerObject.GetComponent<Animator>();

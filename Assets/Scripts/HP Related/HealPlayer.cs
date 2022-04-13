@@ -17,7 +17,7 @@ public class HealPlayer : MonoBehaviour
             if (healthComponent != null)
             {
                 healthComponent.Heal(hpRestoreVal);
-                Debug.Log("Health restored!");
+                //Debug.Log("Health restored!");
                 this.gameObject.SetActive(false);
             }
             else if (healthComponent == null)

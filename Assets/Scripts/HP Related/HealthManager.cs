@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
+    //Used for the UI health
     public GameObject heartPrefab;
     public Health playerHealth;
     List<HealthHeart> hearts = new List<HealthHeart>();

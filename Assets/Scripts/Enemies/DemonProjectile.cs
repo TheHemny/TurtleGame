@@ -69,7 +69,7 @@ public class DemonProjectile : MonoBehaviour
             var parent = other.gameObject.transform.parent.gameObject;
             //player.GetComponent<Health>().TakeDamage(2);
             damagePlayer.DealDamage(2);
-            Debug.Log("FUCK YOU!!!");
+            
             Destroy(gameObject);
         }
     }

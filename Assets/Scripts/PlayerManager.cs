@@ -16,9 +16,13 @@ public class PlayerManager : MonoBehaviour
     public GameObject[] hitboxes;
     private GameObject previousActiveHurtbox;
 
+    private int coinCount;
+
     private bool isAttacking;
     private bool isBlocking;
     private bool movingVertical;
+
+    public GameObject veryWealthy;
 
     Vector2 movement;
 
@@ -32,6 +36,8 @@ public class PlayerManager : MonoBehaviour
         isAttacking = false;
         movingVertical = false;
         hurtboxes[0].SetActive(true);
+
+        veryWealthy.SetActive(false);
     }//end Start()
 
     void Update()
@@ -202,6 +208,14 @@ public class PlayerManager : MonoBehaviour
             hitboxes[i].SetActive(false);
         }
     }//end ClearHitboxes()
+
+    
+    public void GoldenFreddy()
+    {
+        //Activates "VERY wealthy" sprite when all coins collected
+        //Called from CoinCounts script
+        veryWealthy.SetActive(true);
+    }
 
     IEnumerator TurtleAttack()
     {

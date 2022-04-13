@@ -213,7 +213,7 @@ public class Demon : MonoBehaviour
         {
             m_animator.SetInteger("Health", healthComponent.GetCurrentHealth());
             healthComponent.TakeDamage(1);
-            Debug.Log("Enemyt hit");
+            
             if(healthComponent.GetCurrentHealth() == 0)
             {
                 canMove = false;
@@ -229,6 +229,7 @@ public class Demon : MonoBehaviour
 
     private void MoveDestination()
     {
+        readyToAttack = false;
         float step = moveSpeed * Time.deltaTime;
         if (canMove && !isDead)
         {
@@ -251,8 +252,8 @@ public class Demon : MonoBehaviour
                 StartCoroutine(DelayMoveAgain());
             }
         }
-        
 
+        readyToAttack = true;
     }//end moveDestination
 
     IEnumerator DelayDeathDespawn()
