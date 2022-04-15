@@ -14,11 +14,15 @@ public class HealPlayer : MonoBehaviour
         if(other.tag == "Player_Hurtbox")
         {
             var healthComponent = player.GetComponent<Health>();
-            if (healthComponent != null)
+            if (healthComponent != null && (healthComponent.GetCurrentHealth() != healthComponent.GetMaxHealth()))
             {
                 healthComponent.Heal(hpRestoreVal);
                 //Debug.Log("Health restored!");
-                this.gameObject.SetActive(false);
+
+                if (this.gameObject.tag != "Persistent_Health_Restore")
+                {
+                    Destroy(this.gameObject);
+                }
             }
             else if (healthComponent == null)
                 Debug.Log("healthComponent is null");

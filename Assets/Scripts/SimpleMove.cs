@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SimpleMove : MonoBehaviour
 {
+    //Used for testing moving damage sources early on
+    //Not used anywhere in final game
+
     private bool dirRight = true;
     public float speed = 2.0f;
 

@@ -13,6 +13,10 @@ TagManager:
   - Pitchfork_Down
   - Pitchfork_Left
   - Pitchfork_Right
+  - NPC_Hurtbox
+  - Coin
+  - Health_Upgrade
+  - Persistent_Health_Restore
   layers:
   - Default
   - TransparentFX

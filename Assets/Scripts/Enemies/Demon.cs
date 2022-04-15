@@ -19,7 +19,6 @@ public class Demon : MonoBehaviour
     public AudioSource deathSound;
     public AudioSource attackSound;
 
-    private bool isAggro;
     private bool canMove;
     private bool moveHorizontal;
     private bool moveVertical;
@@ -49,6 +48,11 @@ public class Demon : MonoBehaviour
 
     void Start()
     {
+        if (lootDrop.tag == "Coin")
+        {
+            //Without this, all hearts will be set inactive because they can drop from enemies
+            lootDrop.SetActive(false);
+        }
         isDead = false;
         readyToAttack = false;
         m_animator = GetComponent<Animator>();
@@ -60,7 +64,6 @@ public class Demon : MonoBehaviour
             //Right hurtbox = hurtboxes[1];
         }
 
-        isAggro = false;
         canMove = false;
         readyForNewPos = true;
         target.position = transform.position;
@@ -266,9 +269,13 @@ public class Demon : MonoBehaviour
         this.gameObject.SetActive(false);
         
         //Instantiates a gameobject after death, if enemy is assigned one
-        if(lootDrop != null)
+        if(lootDrop != null && lootDrop.tag != "Coin")
         {
             Instantiate(lootDrop, transform.position, lootDrop.transform.rotation);
+        } else if (lootDrop != null && lootDrop.tag == "Coin")
+        {
+            lootDrop.transform.position = transform.position;
+            lootDrop.SetActive(true);
         }
     }//end DelayDeathDespawn
 

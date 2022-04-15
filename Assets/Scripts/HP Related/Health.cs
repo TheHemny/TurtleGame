@@ -54,4 +54,17 @@ public class Health : MonoBehaviour
     {
         return currentHealth;
     }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Health_Upgrade")
+        {
+            AddMaxHealth();
+            Destroy(other.gameObject);
+        }
+    }
 }
