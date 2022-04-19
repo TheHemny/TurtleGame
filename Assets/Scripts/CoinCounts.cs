@@ -14,7 +14,7 @@ public class CoinCounts : MonoBehaviour
     {
         coinCount = 0;
         children = gameObject.GetComponentsInChildren<Transform>();
-        totalCoins = children.Length;
+        totalCoins = children.Length - 1;
     }//end Start()
 
     void LateUpdate()

@@ -15,9 +15,12 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         coinScript = coinParent.GetComponent<CoinCounts>();
+        if (coinScript != null)
+        {
+            Debug.Log("CoinScript isn't null!");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameIsPaused)
